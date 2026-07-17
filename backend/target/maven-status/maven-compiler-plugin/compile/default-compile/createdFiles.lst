@@ -1,4 +1,0 @@
-com\hospital\consultation\model\User$UserBuilder.class
-com\hospital\consultation\model\AdminAuditLog$AdminAuditLogBuilder.class
-com\hospital\consultation\model\ConsultationSession$ConsultationSessionBuilder.class
-com\hospital\consultation\model\Doctor$DoctorBuilder.class
