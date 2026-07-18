@@ -1,16 +1,28 @@
-# React + Vite
+# MedVitals HMS - Spring Boot Java Backend Deployment Guide
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This backend is built with Spring Boot, Java 17, and JPA Hibernate connecting to MySQL.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 How to Run on Any System
 
-## React Compiler
+### Prerequisites
+1. **Java Development Kit (JDK)**: JDK 17 or higher.
+2. **MySQL Database**: A running MySQL instance (default port 3306).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Step 1: Configure Database Credentials
+Open [application.properties](file:///C:/Users/rahul/.gemini/antigravity/scratch/hospital-consultation-app/backend/src/main/resources/application.properties) and update the datasource connection settings to match the target database configurations:
+```properties
+spring.datasource.username=YOUR_MYSQL_USERNAME
+spring.datasource.password=YOUR_MYSQL_PASSWORD
+```
 
-## Expanding the ESLint configuration
+### Step 2: Initialize Database Schemas
+Examine the database script [schema.sql](file:///C:/Users/rahul/.gemini/antigravity/scratch/hospital-consultation-app/backend/src/main/resources/schema.sql) and run it inside your MySQL client or IDE to set up the tables, constraints, and spatial indexes.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Step 3: Run the Application
+In your terminal, navigate to this folder and use Maven to run:
+```bash
+./mvnw spring-boot:run
+```
+Or open the folder inside any Java IDE (e.g. IntelliJ IDEA, Eclipse, VS Code) and run the main entry point [ConsultationApplication.java](file:///C:/Users/rahul/.gemini/antigravity/scratch/hospital-consultation-app/backend/src/main/java/com/hospital/consultation/ConsultationApplication.java).
